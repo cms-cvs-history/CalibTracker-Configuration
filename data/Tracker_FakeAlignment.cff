@@ -1,3 +1,3 @@
-#
-# nothing!
-#
+# Dummy alignment producer (does not actually put data in the ES!)
+include "Alignment/CommonAlignmentProducer/data/fakeAlignmentProducer.cfi"
+
