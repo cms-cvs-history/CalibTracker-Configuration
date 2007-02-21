@@ -11,11 +11,11 @@
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_ALIGNMENT"
     #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
-    #untracked bool siteLocalConfig = false // oracle
+    #untracked bool siteLocalConfig = false
 
-    untracked uint32 authenticationMethod = 1 // 0
+    untracked uint32 authenticationMethod = 1
     string timetype = "runnumber"
-    untracked uint32 messagelevel = 0 // 2
+    untracked uint32 messagelevel = 0
   }
 
 # to apply misalignments
