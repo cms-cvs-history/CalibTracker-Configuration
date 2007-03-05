@@ -1,22 +1,25 @@
-  es_source trackerAlignment = PoolDBESSource { 
+  include "CondCore/DBCommon/data/CondDBSetup.cfi"
 
+  es_source trackerAlignment = PoolDBESSource { 
+    using CondDBSetup
     VPSet toGet = {
       { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry" },
-      { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors" }
+      { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors130" }
     }
+    string timetype = "runnumber"
 
     # FRONTIER
     string connect = "frontier://cms_conditions_data/CMS_COND_ALIGNMENT"
-    untracked bool siteLocalConfig = true // frontier
+    untracked bool siteLocalConfig = true
+
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_ALIGNMENT"
     #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
     #untracked bool siteLocalConfig = false
 
-    untracked uint32 authenticationMethod = 1
-    string timetype = "runnumber"
-    untracked uint32 messagelevel = 0
   }
+
+  es_prefer trackerAlignment = PoolDBESSource {}
 
 # to apply misalignments
   replace TrackerDigiGeometryESModule.applyAlignment = true      
