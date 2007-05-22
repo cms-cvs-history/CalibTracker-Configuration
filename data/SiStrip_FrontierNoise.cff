@@ -28,9 +28,9 @@ es_source siStripNoise = PoolDBESSource {
 }
 
 
-# to apply gain corrections at simulation level
+# to apply noise corrections at simulation level
 replace siStripDigis.UseCalibDataFromDB = true
 
 
-# to apply gain corrections at reconstruction level
+# to apply noise corrections at reconstruction level
 replace siStripClusters.UseCalibDataFromDB  = true
