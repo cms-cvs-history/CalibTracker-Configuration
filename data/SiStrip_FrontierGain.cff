@@ -1,0 +1,42 @@
+include "CondCore/DBCommon/data/CondDBSetup.cfi"
+
+es_source siStripApvGain = PoolDBESSource { 
+
+    VPSet toGet = {{ string record = "SiStripApvGainRcd" string tag = "SiStripGaussianGain" }}
+	
+    # FRONTIER
+    string connect = "frontier://cms_conditions_data/CMS_COND_ALIGNMENT"
+    untracked bool siteLocalConfig = true
+
+    # ORACLE
+    #string connect = "oracle://cms_orcoff_int2r/CMS_COND_ALIGNMENT"
+    #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
+    #untracked bool siteLocalConfig = false
+
+
+    #SQLITE	
+    #string connect = "sqlite_file:dbfile"    
+    # untracked string catalog = "file:dbcatalog"
+
+    string timetype = "runnumber" 
+
+    PSet DBParameters = {
+	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+	untracked int32 messageLevel=2
+     	untracked bool loadBlobStreamer = true
+    }
+}
+
+
+es_module = SiStripGainESProducer {
+
+    double NormalizationFactor=1.
+
+}
+
+
+# to apply gain corrections at simulation level
+#replace siStripDigis.UseGainFromDB  = true
+
+# to apply gain corrections at reconstruction level
+#replace siStripClusters.UseGainFromDB  = true
