@@ -13,11 +13,6 @@ es_source siStripApvGain = PoolDBESSource {
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_STRIP"
     #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
     #untracked bool siteLocalConfig = false
-    # PSet DBParameters = {
-    #	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
-    #	untracked int32 messageLevel=2
-    # 	untracked bool loadBlobStreamer = true
-    # }
 
 
     #SQLITE	
@@ -25,6 +20,14 @@ es_source siStripApvGain = PoolDBESSource {
     # untracked string catalog = "file:dbcatalog"
 
     string timetype = "runnumber" 
+
+    PSet DBParameters = {
+#for ORACLE and SQLITE modes
+#   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+   	untracked string authenticationPath=""
+   	untracked int32 messageLevel=2
+       	untracked bool loadBlobStreamer = true
+    }
 
 
 }
