@@ -8,6 +8,7 @@ es_source  siStripLorentzAngle = PoolDBESSource {
     # FRONTIER
     string connect = "frontier://cms_conditions_data/CMS_COND_STRIP"
     untracked bool siteLocalConfig = true
+    untracked string catalog = ""
 
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_STRIP"
