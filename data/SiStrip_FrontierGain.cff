@@ -1,5 +1,5 @@
 include "CondCore/DBCommon/data/CondDBSetup.cfi"
-replace CondDBSetup.DBParameters.loadBlobStreamer=true
+#replace CondDBSetup.DBParameters.loadBlobStreamer=true
 
 es_source siStripApvGain = PoolDBESSource { 
 
