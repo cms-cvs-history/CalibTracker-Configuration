@@ -33,10 +33,10 @@ es_source siStripApvGain = PoolDBESSource {
 
 }
 
-#include "CalibTracker/SiStripGainESProducers/data/SiStripGainESProducer.cfi"
+include "CalibTracker/SiStripGainESProducers/data/SiStripGainESProducer.cfi"
 
 
-
+#OBSOLETE
 # to apply gain corrections at simulation level
 #replace siStripDigis.UseGainFromDB  = true
 

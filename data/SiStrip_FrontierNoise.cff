@@ -33,7 +33,7 @@ es_source siStripNoise = PoolDBESSource {
 
 }
 
-
+#OBSOLETE
 # to apply noise corrections at simulation level
 #replace siStripDigis.UseCalibDataFromDB = true
 
