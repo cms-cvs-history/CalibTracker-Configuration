@@ -33,12 +33,8 @@ es_source siStripApvGain = PoolDBESSource {
 
 }
 
+#include "CalibTracker/SiStripGainESProducers/data/SiStripGainESProducer.cfi"
 
-es_module = SiStripGainESProducer {
-
-    double NormalizationFactor=1.
-
-}
 
 
 # to apply gain corrections at simulation level
