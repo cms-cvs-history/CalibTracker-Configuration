@@ -35,19 +35,8 @@ es_source  siStripLorentzAngle = PoolDBESSource {
 }
 
 include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
-#replace StripCPEfromTrackAngleESProducer.UseCalibrationFromDB =true
 # alternative
 #include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPE.cfi"
-#replace StripCPEESProducer.UseCalibrationFromDB  = true
 
 include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
-
-
-
-# to introduce lorentz angle values at simulation level
-#replace siStripDigis.UseLACalibrationFromDB = true
-# to apply Lorentz angle values at reconstruction level
-#replace StripCPEESProducer.UseCalibrationFromDB  = true
-# or
-#replace StripCPEfromTrackAngleESProducer.UseCalibrationFromDB  = true
 
