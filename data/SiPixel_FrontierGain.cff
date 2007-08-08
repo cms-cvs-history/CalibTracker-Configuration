@@ -1,5 +1,4 @@
 include "CondCore/DBCommon/data/CondDBSetup.cfi"
-replace CondDBSetup.DBParameters.loadBlobStreamer=true
 
 es_source siPixelGainCalibration = PoolDBESSource { 
 
@@ -28,15 +27,7 @@ es_source siPixelGainCalibration = PoolDBESSource {
    	untracked int32 messageLevel=2
        	untracked bool loadBlobStreamer = true
     }
-
-
 }
-
-
-#es_module = SiStripGainESProducer {
-#    double NormalizationFactor=1.
-#}
-
 
 # to apply gain corrections at reconstruction level
 #replace siPixelClusters.UseCalibDataFromDB = true
