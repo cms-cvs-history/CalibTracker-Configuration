@@ -1,3 +1,5 @@
-# Dummy gain producer (no data is put in the ES!)
-
+#
+# ESource for fake gain calibration
+#
+include "CalibTracker/SiPixelESProducers/data/SiPixelFakeGainESSource.cfi"
 
