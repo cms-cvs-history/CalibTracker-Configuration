@@ -28,6 +28,3 @@ es_source siPixelGainCalibration = PoolDBESSource {
        	untracked bool loadBlobStreamer = true
     }
 }
-
-# to apply gain corrections at reconstruction level
-#replace siPixelClusters.UseCalibDataFromDB = true
