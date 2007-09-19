@@ -8,5 +8,5 @@ es_source es_pool = PoolDBESSource {
   untracked bool siteLocalConfig = true
   untracked uint32 authenticationMethod = 0
   string timetype = "runnumber"
-  VPSet toGet={{string record="SiPixelFedCablingMapRcd" string tag="SiPixelFedCablingMap_v8"}}
+  VPSet toGet={{string record="SiPixelFedCablingMapRcd" string tag="SiPixelFedCablingMap_v9"}}
 }
