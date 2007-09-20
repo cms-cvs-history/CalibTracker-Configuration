@@ -3,18 +3,21 @@ include "CondCore/DBCommon/data/CondDBSetup.cfi"
 es_source siPixelGainCalibration = PoolDBESSource { 
 
     VPSet toGet = {{ string record = "SiPixelGainCalibrationRcd" string tag = "mytest_p" }}
-	
+    #	
     # FRONTIER
+    #
     string connect = "frontier://cms_conditions_data/CMS_COND_PIXEL"
     untracked bool siteLocalConfig = true
-
+    untracked string catalog = ""
+    #
     # ORACLE
+    #
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_PIXEL"
     #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
     #untracked bool siteLocalConfig = false
-
-
-    #SQLITE	
+    #
+    # SQLITE
+    #	
     #string connect = "sqlite_file:dbfile"    
     # untracked string catalog = "file:dbcatalog"
 
