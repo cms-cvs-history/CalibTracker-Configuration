@@ -5,7 +5,6 @@ include "CondCore/DBCommon/data/CondDBSetup.cfi"
 es_source es_pool = PoolDBESSource {
   using CondDBSetup
   string connect = "frontier://FrontierDev/CMS_COND_PIXEL"
-  untracked bool siteLocalConfig = true
   untracked uint32 authenticationMethod = 0
   string timetype = "runnumber"
   VPSet toGet={{string record="SiPixelFedCablingMapRcd" string tag="SiPixelFedCablingMap_v9"}}

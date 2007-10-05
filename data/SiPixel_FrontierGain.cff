@@ -2,21 +2,20 @@ include "CondCore/DBCommon/data/CondDBSetup.cfi"
 
 es_source siPixelGainCalibration = PoolDBESSource { 
 
+    # WARNING: the following DB tag works on 16x series but not on 17x.
+    #          A valid tag for 17x will be uploaded in INT2R when requested
+    #          by AlCa coordinators
+    # 
     VPSet toGet = {{ string record = "SiPixelGainCalibrationRcd" string tag = "mytest_p" }}
 	
     # FRONTIER
     string connect = "frontier://cms_conditions_data/CMS_COND_PIXEL"
-    untracked bool siteLocalConfig = true
 
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_PIXEL"
-    #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
-    #untracked bool siteLocalConfig = false
-
 
     #SQLITE	
     #string connect = "sqlite_file:dbfile"    
-    # untracked string catalog = "file:dbcatalog"
 
     string timetype = "runnumber" 
 
@@ -25,6 +24,6 @@ es_source siPixelGainCalibration = PoolDBESSource {
 #   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
    	untracked int32 messageLevel=2
-       	untracked bool loadBlobStreamer = true
+       	untracked string BlobStreamerName = "DefaultBlobStreamingService"
     }
 }
