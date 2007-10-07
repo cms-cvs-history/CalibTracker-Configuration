@@ -7,18 +7,13 @@ es_source siStripPedestals = PoolDBESSource {
 	
     # FRONTIER
     string connect = "frontier://cms_conditions_data/CMS_COND_STRIP"
-    untracked bool siteLocalConfig = true
-    untracked string catalog = ""
 
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_STRIP"
-    #untracked string catalog = "relationalcatalog_oracle://cms_orcoff_int2r/CMS_COND_GENERAL"
-    #untracked bool siteLocalConfig = false
-
 
     #SQLITE	
     #string connect = "sqlite_file:dbfile"    
-    # untracked string catalog = "file:dbcatalog"
+
 
     string timetype = "runnumber" 
 
@@ -28,7 +23,7 @@ es_source siStripPedestals = PoolDBESSource {
 #   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
    	untracked int32 messageLevel=2
-       	untracked bool loadBlobStreamer = true
+	untracked string BlobStreamerName = "DefaultBlobStreamingService"      
     }
 
 }
