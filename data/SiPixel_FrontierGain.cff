@@ -21,6 +21,6 @@ es_source siPixelGainCalibration = PoolDBESSource {
 #for ORACLE and SQLITE modes
 #   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
-   	untracked int32 messageLevel=2
+   	untracked int32 messageLevel=0
     }
 }

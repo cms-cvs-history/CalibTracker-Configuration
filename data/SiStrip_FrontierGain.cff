@@ -1,13 +1,10 @@
-include "CondCore/DBCommon/data/CondDBSetup.cfi"
-#replace CondDBSetup.DBParameters.loadBlobStreamer=true
-
 es_source siStripApvGain = PoolDBESSource { 
-
+    
     VPSet toGet = {{ string record = "SiStripApvGainRcd" string tag = "SiStripGaussianGain" }}
 	
     # FRONTIER
     string connect = "frontier://cms_conditions_data/CMS_COND_STRIP"
-
+    
     # ORACLE
     #string connect = "oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 
@@ -18,22 +15,11 @@ es_source siStripApvGain = PoolDBESSource {
 
     untracked string BlobStreamerName = "DefaultBlobStreamingService"
     PSet DBParameters = {
-#for ORACLE and SQLITE modes
-#   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+	#for ORACLE and SQLITE modes
+	#untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
-   	untracked int32 messageLevel=2
-
+   	untracked int32 messageLevel=0
     }
-
-
 }
 
-include "CalibTracker/SiStripGainESProducers/data/SiStripGainESProducer.cfi"
-
-
-#OBSOLETE
-# to apply gain corrections at simulation level
-#replace siStripDigis.UseGainFromDB  = true
-
-# to apply gain corrections at reconstruction level
-#replace siStripClusters.UseGainFromDB  = true
+include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"

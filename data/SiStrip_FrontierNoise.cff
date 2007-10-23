@@ -1,6 +1,3 @@
-include "CondCore/DBCommon/data/CondDBSetup.cfi"
-#replace CondDBSetup.DBParameters.loadBlobStreamer=true
-
 es_source siStripNoise = PoolDBESSource { 
 
     VPSet toGet = {{ string record = "SiStripNoisesRcd" string tag = "SiStripFakeNoise" }}
@@ -14,7 +11,6 @@ es_source siStripNoise = PoolDBESSource {
     #SQLITE	
     #string connect = "sqlite_file:dbfile"    
 
-
     string timetype = "runnumber" 
 
     untracked string BlobStreamerName = "DefaultBlobStreamingService"
@@ -23,16 +19,6 @@ es_source siStripNoise = PoolDBESSource {
 #for ORACLE and SQLITE modes
 #   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
-   	untracked int32 messageLevel=2
-
+   	untracked int32 messageLevel=0
     }
-
 }
-
-#OBSOLETE
-# to apply noise corrections at simulation level
-#replace siStripDigis.UseCalibDataFromDB = true
-
-
-# to apply noise corrections at reconstruction level
-#replace siStripClusters.UseCalibDataFromDB  = true

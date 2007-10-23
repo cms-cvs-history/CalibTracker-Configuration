@@ -1,6 +1,3 @@
-include "CondCore/DBCommon/data/CondDBSetup.cfi"
-#replace CondDBSetup.DBParameters.loadBlobStreamer=false
-
 es_source  siStripLorentzAngle = PoolDBESSource { 
 
     VPSet toGet = {{ string record = "SiStripLorentzAngleRcd" string tag = "SiStripDummyLorentzAngle" }}
@@ -25,12 +22,8 @@ es_source  siStripLorentzAngle = PoolDBESSource {
 #for ORACLE and SQLITE modes
 #   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""
-   	untracked int32 messageLevel=2
-
+   	untracked int32 messageLevel=0
     }
-
-
-
 }
 
 include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
