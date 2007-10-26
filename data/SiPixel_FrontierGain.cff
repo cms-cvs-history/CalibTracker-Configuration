@@ -3,19 +3,19 @@ include "CondCore/DBCommon/data/CondDBSetup.cfi"
 es_source siPixelGainCalibration = PoolDBESSource { 
 
     # Object Name and Tag
-    VPSet toGet = {{ string record = "SiPixelGainCalibrationRcd" string tag = "V2_trivial" }}
+    VPSet toGet = {{ string record = "SiPixelGainCalibrationRcd" string tag = "V2_trivial_TBuffer" }}
 	
     # FRONTIER 
     string connect = "frontier://cms_conditions_data/CMS_COND_PIXEL"
 
     # ORACLE Development DB
-    #string connect = "oracle://cms_orcoff_int2r/CMS_COND_PIXEL"
+    # string connect = "oracle://cms_orcoff_int2r/CMS_COND_PIXEL"
 
     # SQLITE file	
     #string connect = "sqlite_file:prova.db"    
 
     string timetype = "runnumber" 
-    untracked string BlobStreamerName = "DefaultBlobStreamingService"
+    untracked string BlobStreamerName = "TBufferBlobStreamingService"
 
     PSet DBParameters = {
 #for ORACLE and SQLITE modes
