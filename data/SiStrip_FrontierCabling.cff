@@ -11,7 +11,7 @@ es_source siStripFedCabling = PoolDBESSource {
     #string connect = "sqlite_file:dbfile"    
     
     string timetype = "runnumber"
-    untracked string BlobStreamerName="DefaultBlobStreamingService"
+    untracked string BlobStreamerName="TBufferBlobStreamingService"
     PSet DBParameters = {
 	#untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
    	untracked string authenticationPath=""

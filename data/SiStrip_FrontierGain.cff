@@ -13,7 +13,7 @@ es_source siStripApvGain = PoolDBESSource {
 
     string timetype = "runnumber" 
 
-    untracked string BlobStreamerName = "DefaultBlobStreamingService"
+    untracked string BlobStreamerName = "TBufferBlobStreamingService"
     PSet DBParameters = {
 	#for ORACLE and SQLITE modes
 	#untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"

@@ -15,7 +15,7 @@ es_source siStripPedestals = PoolDBESSource {
     string timetype = "runnumber" 
 
 
-    untracked string BlobStreamerName = "DefaultBlobStreamingService"      
+    untracked string BlobStreamerName = "TBufferBlobStreamingService"      
 
     PSet DBParameters = {
 #for ORACLE and SQLITE modes
