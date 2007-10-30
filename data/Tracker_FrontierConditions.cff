@@ -1,0 +1,39 @@
+# Tracker alignment
+#
+include "CalibTracker/Configuration/data/Tracker_FrontierAlignment.cfi"
+replace trackerAlignment.connect="frontier://FrontierDev/CMS_COND_ALIGNMENT"
+replace trackerAlignment.toGet = {
+        { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry150" },
+        { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors150" }
+       }
+#
+# Pixel calib
+#
+include "CalibTracker/Configuration/data/SiPixel_FrontierGain.cfi"
+replace siPixelGainCalibration.connect="frontier://FrontierDev/CMS_COND_PIXEL"
+replace siPixelGainCalibration.toGet= {{ string record = "SiPixelGainCalibrationRcd" 
+                                         string tag = "V2_trivial_TBuffer" }}
+replace siPixelGainCalibration.BlobStreamerName = "TBufferBlobStreamingService"
+#
+# Strip calib
+#
+include "CalibTracker/Configuration/data/SiStrip_FrontierGain.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FrontierNoise.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FakePedestals.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FrontierLorentzAngle.cfi"
+
+replace siStripApvGain.connect="frontier://FrontierDev/CMS_COND_STRIP"
+replace siStripApvGain.toGet = {{ string record = "SiStripApvGainRcd"
+                                  string tag = "CSA07_SiStrip_Ideal_Gain_v2" }}
+replace siStripApvGain.BlobStreamerName = "TBufferBlobStreamingService"
+
+replace siStripLorentzAngle.connect="frontier://FrontierDev/CMS_COND_STRIP"
+replace siStripLorentzAngle.toGet = {{ string record = "SiStripLorentzAngleRcd" 
+                                       string tag = "CSA07_SiStrip_Ideal_LAngle_v2" }}
+replace siStripLorentzAngle.BlobStreamerName = "TBufferBlobStreamingService"
+
+replace siStripNoise.connect="frontier://FrontierDev/CMS_COND_STRIP"
+replace siStripNoise.toGet = {{ string record = "SiStripNoisesRcd" 
+                                       string tag = "CSA07_SiStrip_Noise_v2" }}
+replace siStripNoise.BlobStreamerName = "TBufferBlobStreamingService"
+
