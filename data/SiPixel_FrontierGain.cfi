@@ -1,5 +1,3 @@
-include "CondCore/DBCommon/data/CondDBSetup.cfi"
-
 es_source siPixelGainCalibration = PoolDBESSource { 
 
     # Object Name and Tag

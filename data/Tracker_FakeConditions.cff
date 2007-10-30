@@ -1,15 +1,15 @@
 # Tracker alignment
 #
-include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cff"
+include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cfi"
 #
 # Pixel calib
 #
-include "CalibTracker/Configuration/data/SiPixel_FakeGain.cff"
+include "CalibTracker/Configuration/data/SiPixel_FakeGain.cfi"
 #
 # Strip calib
 #
-include "CalibTracker/Configuration/data/SiStrip_FakeGain.cff"
-include "CalibTracker/Configuration/data/SiStrip_FakeNoise.cff"
-include "CalibTracker/Configuration/data/SiStrip_FakePedestals.cff"
-include "CalibTracker/Configuration/data/SiStrip_FakeLorentzAngle.cff"
+include "CalibTracker/Configuration/data/SiStrip_FakeGain.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FakeNoise.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FakePedestals.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FakeLorentzAngle.cfi"
 
