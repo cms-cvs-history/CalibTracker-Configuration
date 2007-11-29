@@ -13,3 +13,4 @@ include "CalibTracker/Configuration/data/SiStrip_FakeNoise.cfi"
 include "CalibTracker/Configuration/data/SiStrip_FakePedestals.cfi"
 include "CalibTracker/Configuration/data/SiStrip_FakeLorentzAngle.cfi"
 
+include "CalibTracker/SiStripESProducers/data/SiStripQualityFakeESSource.cfi"
