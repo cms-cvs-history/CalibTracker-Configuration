@@ -1,2 +1,2 @@
 include "CalibTracker/Configuration/data/SiStrip_FrontierPedestals.cfi"
-repalce siStripPedestals.connect = "frontier://cms_conditions_data/CMS_COND_17X_STRIP"
+replace siStripPedestals.connect = "frontier://Frontier/CMS_COND_17X_STRIP"

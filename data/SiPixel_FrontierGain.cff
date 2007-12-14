@@ -1,5 +1,5 @@
 include "CalibTracker/Configuration/data/SiPixel_FrontierGain.cfi"
-replace siPixelGainCalibration.connect="frontier://cms_conditions_data/CMS_COND_17X_PIXEL"
+replace siPixelGainCalibration.connect="frontier://Frontier/CMS_COND_17X_PIXEL"
 replace siPixelGainCalibration.toGet= {{ string record = "SiPixelGainCalibrationRcd" 
                                          string tag = "V2_trivial_TBuffer" }}
 replace siPixelGainCalibration.BlobStreamerName = "TBufferBlobStreamingService"

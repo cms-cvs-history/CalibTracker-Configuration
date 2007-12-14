@@ -1,5 +1,5 @@
 include "CalibTracker/Configuration/data/Tracker_FrontierAlignment.cfi"
-replace trackerAlignment.connect="frontier://cms_conditions_data/CMS_COND_17X_ALIGNMENT"
+replace trackerAlignment.connect="frontier://Frontier/CMS_COND_17X_ALIGNMENT"
 replace trackerAlignment.toGet = {
         { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry170" },
         { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors170" }
