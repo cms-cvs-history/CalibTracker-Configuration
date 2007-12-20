@@ -1,6 +1,6 @@
 include "CalibTracker/Configuration/data/SiStrip_FrontierGain.cfi"
 
-replace siStripApvGain.connect="frontier://cms_conditions_data/CMS_COND_17X_STRIP"
+replace siStripApvGain.connect="frontier://cms_conditions_data/CMS_COND_18X_STRIP"
 replace siStripApvGain.toGet = {{ string record = "SiStripApvGainRcd"
                                   string tag = "CSA07_SiStrip_Ideal_Gain_v2" }}
 replace siStripApvGain.BlobStreamerName = "TBufferBlobStreamingService"

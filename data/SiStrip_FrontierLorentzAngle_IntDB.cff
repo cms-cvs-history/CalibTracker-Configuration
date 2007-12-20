@@ -1,6 +1,6 @@
 include "CalibTracker/Configuration/data/SiStrip_FrontierLorentzAngle.cfi"
 
-replace siStripLorentzAngle.connect="frontier://cms_conditions_data/CMS_COND_17X_STRIP"
+replace siStripLorentzAngle.connect="frontier://cms_conditions_data/CMS_COND_18X_STRIP"
 replace siStripLorentzAngle.toGet = {{ string record = "SiStripLorentzAngleRcd" 
                                        string tag = "CSA07_SiStrip_Ideal_LAngle_v2" }}
 replace siStripLorentzAngle.BlobStreamerName = "TBufferBlobStreamingService"
