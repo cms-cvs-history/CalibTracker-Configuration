@@ -1,0 +1,4 @@
+include "CalibTracker/Configuration/data/SiStrip_FrontierCabling.cfi"
+
+replace siStripFedCabling.connect="sqlite_fip:CondCore/SQLiteData/data/sistripfedcabling_18X.db"
+replace siStripFedCabling.toGet= {{ string record = "SiStripFedCablingRcd" string tag = "SiStripFedCabling_18X" }}
