@@ -1,4 +1,22 @@
-include "CalibTracker/Configuration/data/SiStrip_FrontierCabling.cfi"
+es_source siStripFedCabling = PoolDBESSource {
+    VPSet toGet = {{ string record = "SiStripFedCablingRcd" string tag = "SiStripFedCabling_18X" }}
 
-replace siStripFedCabling.connect="sqlite_fip:CondCore/SQLiteData/data/sistripfedcabling_18X.db"
-replace siStripFedCabling.toGet= {{ string record = "SiStripFedCablingRcd" string tag = "SiStripFedCabling_18X" }}
+    # FRONTIER
+    #string connect = "frontier://cms_conditions_data/CMS_COND_STRIP"
+
+    # ORACLE	
+    #string connect = "oracle://orcon/CMS_COND_STRIP"
+
+    #SQLITE	
+    string connect = "sqlite_fip:CondCore/SQLiteData/data/sistripfedcabling_18X.db"
+    
+    string timetype = "runnumber"
+    #untracked string BlobStreamerName="TBufferBlobStreamingService"
+    PSet DBParameters = {
+	#untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+   	untracked string authenticationPath=""
+	untracked int32 messageLevel = 0
+    }
+}
+
+es_module sistripconn = SiStripConnectivity {}
