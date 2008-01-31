@@ -6,7 +6,7 @@ es_source siPixelCabling = PoolDBESSource {
 
   string timetype = "runnumber"
 
-  string connect="sqlite_fip:CondCore/SQLiteData/data/siPixelCabling150.db"
+  string connect="sqlite_fip:CondCore/SQLiteData/data/siPixelCabling180.db"
 
   PSet DBParameters = {
 #    untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
