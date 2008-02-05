@@ -13,7 +13,6 @@ es_source siPixelLorentzAngle = PoolDBESSource {
     #string connect = "sqlite_file:prova.db"    
 
     string timetype = "runnumber" 
-    untracked string BlobStreamerName = "TBufferBlobStreamingService"
 
     PSet DBParameters = {
 #for ORACLE and SQLITE modes
