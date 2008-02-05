@@ -1,0 +1,24 @@
+es_source siPixelLorentzAngle = PoolDBESSource { 
+
+    # Object Name and Tag
+    VPSet toGet = {{ string record = "SiPixelLorentzAngleRcd" string tag = "trivial_LorentzAngle" }}
+	
+    # FRONTIER 
+    string connect = "frontier://cms_conditions_data/CMS_COND_PIXEL"
+
+    # ORACLE Development DB
+    # string connect = "oracle://cms_orcoff_int2r/CMS_COND_PIXEL"
+
+    # SQLITE file	
+    #string connect = "sqlite_file:prova.db"    
+
+    string timetype = "runnumber" 
+    untracked string BlobStreamerName = "TBufferBlobStreamingService"
+
+    PSet DBParameters = {
+#for ORACLE and SQLITE modes
+#   	untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+   	untracked string authenticationPath=""
+   	untracked int32 messageLevel=0
+    }
+}

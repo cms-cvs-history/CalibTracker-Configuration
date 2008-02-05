@@ -1,0 +1,5 @@
+include "CalibTracker/Configuration/data/SiPixel_FrontierLorentzAngle.cfi"
+replace siPixelLorentzAngle.connect="frontier://FrontierDev/CMS_COND_PIXEL"
+replace siPixelLorentzAngle.toGet= {{ string record = "SiPixelLorentzAngleRcd" 
+                                         string tag = "trivial_LorentzAngle" }}
+replace siPixelLorentzAngle.BlobStreamerName = "TBufferBlobStreamingService"
