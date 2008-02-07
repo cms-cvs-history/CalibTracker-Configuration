@@ -1,4 +1,6 @@
   include "CondCore/DBCommon/data/CondDBSetup.cfi"
+  include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
+
 
   es_source trackerAlignment = PoolDBESSource { 
     using CondDBSetup
