@@ -1,1 +1,18 @@
-include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cfi"
+# Producer module
+# ===============
+# Dummy alignment producer (creating empty Aligments and AlignmentErrors)
+include "Alignment/CommonAlignmentProducer/data/fakeAlignmentProducer.cfi"
+
+# Sources that actually put the records into ESetup
+# (Here with unlimited IOV, taken from producer above.)
+# =====================================================
+es_source trackerAlignmentSource = EmptyESSource {
+    string recordName = "TrackerAlignmentRcd"
+    vuint32 firstValid = {1}
+    bool iovIsRunNotTime = true
+}
+es_source trackerAlignmentErrorSource = EmptyESSource {
+    string recordName = "TrackerAlignmentErrorRcd"
+    vuint32 firstValid = {1}
+    bool iovIsRunNotTime = true
+}
