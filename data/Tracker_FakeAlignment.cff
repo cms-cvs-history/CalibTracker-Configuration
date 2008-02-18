@@ -6,12 +6,15 @@ include "Alignment/CommonAlignmentProducer/data/fakeAlignmentProducer.cfi"
 # Sources that actually put the records into ESetup
 # (Here with unlimited IOV, taken from producer above.)
 # =====================================================
-es_source trackerAlignmentSource = EmptyESSource {
+include "Alignment/CommonAlignmentProducer/data/fakeGlobalPositionSource.cfi"
+
+es_source fakeTrackerAlignmentSource = EmptyESSource {
     string recordName = "TrackerAlignmentRcd"
     vuint32 firstValid = {1}
     bool iovIsRunNotTime = true
 }
-es_source trackerAlignmentErrorSource = EmptyESSource {
+
+es_source fakeTrackerAlignmentErrorSource = EmptyESSource {
     string recordName = "TrackerAlignmentErrorRcd"
     vuint32 firstValid = {1}
     bool iovIsRunNotTime = true
