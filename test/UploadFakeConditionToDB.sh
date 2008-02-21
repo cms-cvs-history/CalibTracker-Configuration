@@ -11,8 +11,7 @@ connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 
 tag_cabling=SiStripFedCabling_18X
 
-tag_Noise=CSA07_SiStrip_Noise_v2
-
+tag_Noise=SiStripNoise_Fake_PeakMode_18X
 
 tag_Gain_Ideal=CSA07_SiStrip_Ideal_Gain_v2
 tag_Gain_10invpb=CSA07_SiStrip_10invpb_Gain_v2
@@ -23,13 +22,17 @@ tag_LA_10invpb=CSA07_SiStrip_10invpb_LAngle_v2
 tag_LA_100invpb=CSA07_SiStrip_100invpb_LAngle_v2
        
 
-
-
 #--------------------------------------------------
 
 [ "c$1" == "c" ] && echo -e "Please specify a DB connect string through command line, using the syntax\n\n\t $0 connectString  \n\n possible connect strings are \n\tsqlite: \t ${connectstringA} \n\toracle: \t ${connectstringB}"&& exit 
 
+[ "c$2" == "c" ] && echo -e "Please specify what object you want to upload: Cabling, Noise, Gain, LorentzAngle or all\n to concatenate more then one object please use the regular expression \(A\)\|\(B\)\|\(C\)" && exit 
+
 connectstring=$1
+what=$2
+[ "$what" == "all" ] && what="."
+
+eval `scramv1 runtime -sh`
 
 IsSqlite=0
 if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]; then
@@ -44,9 +47,7 @@ fi
 
 # sed -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g"              
 
-
-
-for file in `ls templateCFG/*template.cfg`
+for file in `ls templateCFG/*template.cfg | grep -i "$what"`
   do
   echo -e "\n template file $file"
   cfgfile=`basename $file | sed -e "s@_template.cfg@.cfg@"`
