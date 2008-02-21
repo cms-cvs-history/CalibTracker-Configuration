@@ -1,6 +1,6 @@
 include "CalibTracker/Configuration/data/SiStrip_FrontierNoise.cfi"
 
 replace siStripNoise.connect="frontier://cms_conditions_data/CMS_COND_18X_STRIP"
-replace siStripNoise.toGet = {{ string record = "SiStripNoisesRcd" 
-                                       string tag = "CSA07_SiStrip_Noise_v2" }}
+replace siStripNoise.toGet.tag = {{ string record = "SiStripNoisesRcd" 
+                                       string tag = "SiStripNoise_Fake_PeakMode_18X" }}
 replace siStripNoise.BlobStreamerName = "TBufferBlobStreamingService"
