@@ -1,11 +1,10 @@
 # Tracker alignment
 #
-include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cff"
+include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cfi"
 #
 # Pixel calib
 #
 include "CalibTracker/Configuration/data/SiPixel_FakeGain.cfi"
-include "CalibTracker/Configuration/data/SiPixel_FakeLorentzAngle.cfi"
 #
 # Strip calib
 #
