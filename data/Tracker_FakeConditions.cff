@@ -10,7 +10,7 @@ include "CalibTracker/Configuration/data/SiPixel_FakeLorentzAngle.cfi"
 # Strip calib
 #
 include "CalibTracker/Configuration/data/SiStrip_FakeGain.cfi"
-include "CalibTracker/Configuration/data/SiStrip_FakeNoise.cfi"
+include "CalibTracker/Configuration/data/SiStrip_FakeNoise.cff"
 include "CalibTracker/Configuration/data/SiStrip_FakePedestals.cfi"
 include "CalibTracker/Configuration/data/SiStrip_FakeLorentzAngle.cfi"
 
