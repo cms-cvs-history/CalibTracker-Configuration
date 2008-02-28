@@ -1,0 +1,13 @@
+es_source trackerAlignment = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
+replace trackerAlignment.connect="frontier://cms_conditions_data/CMS_COND_18X_ALIGNMENT"
+replace trackerAlignment.toGet = {
+        { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry170" },
+        { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors170" }
+       }
+
+es_prefer trackerAlignment = PoolDBESSource {}
+
+include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
+# to apply misalignments
+replace TrackerDigiGeometryESModule.applyAlignment = true      
+
