@@ -1,2 +1,0 @@
-include "CalibTracker/Configuration/data/SiStrip_FakeNoise_APVModePeak.cff"
-#include "CalibTracker/Configuration/data/SiStrip_FakeNoise_APVModeDec.cff"
