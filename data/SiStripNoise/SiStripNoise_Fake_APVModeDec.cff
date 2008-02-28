@@ -1,0 +1,4 @@
+include "CalibTracker/SiStripESProducers/data/SiStripNoiseFakeSource.cfi"
+replace SiStripNoiseFakeESSource.NoiseStripLengthSlope = 51.
+replace SiStripNoiseFakeESSource.NoiseStripLengthQuote = 630.
+

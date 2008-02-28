@@ -1,0 +1,1 @@
+include "CalibTracker/SiStripESProducers/data/SiStripFedCablingFakeESProducer.cfi"

@@ -1,0 +1,2 @@
+include "CalibTracker/SiStripESProducers/data/SiStripGainFakeSource.cfi"
+include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
