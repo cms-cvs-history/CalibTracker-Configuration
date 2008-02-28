@@ -1,10 +1,13 @@
+##########################
+# Tracker Fake conditions
+##########################
 # Tracker alignment
 #
 include "CalibTracker/Configuration/data/TrackerAlignment/TrackerAlignment_Fake.cff"
 #
 # Pixel calib
 #
-include "CalibTracker/Configuration/data/SiPixel_FrontierConditions_IntDB.cff"
+include "CalibTracker/Configuration/data/SiPixel_FakeConditions.cff"
 #
 # Strip calib
 #
