@@ -1,6 +1,6 @@
 # Tracker alignment
 #
-include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cff"
+include "CalibTracker/Configuration/data/TrackerAlignment/TrackerAlignment_Fake.cff"
 #
 # Pixel calib
 #
