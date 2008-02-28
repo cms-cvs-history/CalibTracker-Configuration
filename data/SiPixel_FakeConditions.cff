@@ -1,5 +1,5 @@
 #
 # Pixel Fake Conditions
 #
-include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Fake.cfi"
-include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Fake.cfi"
+include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Fake.cff"
+include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Fake.cff"
