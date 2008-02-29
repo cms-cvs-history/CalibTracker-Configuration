@@ -1,7 +1,6 @@
 # Tracker alignment
 #
-include "CalibTracker/Configuration/data/Tracker_FakeAlignment.cff"
-#
+include "CalibTracker/Configuration/data/TrackerAlignment/TrackerAlignment_Frontier_IntDB.cff"
 # Pixel calib
 #
 include "CalibTracker/Configuration/data/SiPixel_FrontierConditions_IntDB.cff"
