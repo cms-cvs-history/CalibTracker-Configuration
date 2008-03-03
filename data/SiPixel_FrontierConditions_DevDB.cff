@@ -1,2 +1,6 @@
+#
+# Pixel Frontier conditions from Development DB
+#
+include "CalibTracker/Configuration/data/SiPixelCabling/SiPixelCabling_Frontier_DevDB.cff"
 include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Frontier_DevDB.cff"
-
+include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Frontier_DevDB.cff"

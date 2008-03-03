@@ -2,6 +2,8 @@
 # Cabling from DB 
 #
 es_source siPixelCabling = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siPixelCabling.connect="frontier://FrontierDev/CMS_COND_PIXELS"
+replace siPixelCabling.connect="frontier://FrontierDev/CMS_COND_PIXEL"
 replace siPixelCabling.toGet={{string record="SiPixelFedCablingMapRcd" string tag="SiPixelFedCablingMap_v9"}}
 
+#replace siPixelCabling.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
+#replace siPixelCabling.DBParameters.messageLevel=2
