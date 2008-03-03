@@ -1,1 +1,3 @@
 include "CalibTracker/SiStripESProducers/data/SiStripFedCablingFakeESProducer.cfi"
+
+es_module sistripconn = SiStripConnectivity {}
