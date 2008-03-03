@@ -7,7 +7,7 @@ include "CalibTracker/Configuration/data/SiPixel_FrontierConditions_IntDB.cff"
 #
 # Strip calib
 #
-include "CalibTracker/Configuration/data/SiStrip_FakeConditions.cff"
+include "CalibTracker/Configuration/data/SiStrip_FrontierConditions_IntDB.cff"
 
 
 
