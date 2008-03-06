@@ -1,6 +1,6 @@
 # Using SQLite cabling maps.  No AFS required.
 es_source siPixelCabling = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siPixelCabling.connect="sqlite_fip:CondCore/SQLiteData/data/siPixelCabling180.db"
+replace siPixelCabling.connect="sqlite_fip:CondCore/SQLiteData/data/siPixelCabling200.db"
 replace siPixelCabling.toGet={{string record="SiPixelFedCablingMapRcd" string tag="SiPixelFedCablingMap_v9"}}
 
 
