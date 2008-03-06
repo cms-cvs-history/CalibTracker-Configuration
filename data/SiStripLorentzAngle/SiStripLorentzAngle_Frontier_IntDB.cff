@@ -1,7 +1,7 @@
 es_source siStripLorentzAngle = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siStripLorentzAngle.connect="frontier://cms_conditions_data/CMS_COND_18X_STRIP"
+replace siStripLorentzAngle.connect="frontier://cms_conditions_data/CMS_COND_20X_STRIP"
 replace siStripLorentzAngle.toGet = {{ string record = "SiStripLorentzAngleRcd" 
-                                       string tag = "CSA07_SiStrip_Ideal_LAngle_v2" }}
+                                       string tag = "SiStripLorentzAngle_Ideal_20X" }}
 replace siStripLorentzAngle.BlobStreamerName = "TBufferBlobStreamingService"
 #replace siStripLorentzAngle.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
 #replace siStripLorentzAngle.DBParameters.messageLevel=2

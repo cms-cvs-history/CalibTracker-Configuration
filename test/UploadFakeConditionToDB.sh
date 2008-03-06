@@ -9,17 +9,20 @@ export connectstring
 connectstringA="sqlite_file:dbfile.db"
 connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 
-tag_cabling=SiStripFedCabling_18X
+USER=CMS_COND_STRIP
+PASSWD=SSWDC3MCAI8HQHTC
 
-tag_Noise=SiStripNoise_Fake_PeakMode_18X
+tag_cabling=SiStripFedCabling_20X
 
-tag_Gain_Ideal=CSA07_SiStrip_Ideal_Gain_v2
-tag_Gain_10invpb=CSA07_SiStrip_10invpb_Gain_v2
-tag_Gain_100invpb=CSA07_SiStrip_100invpb_Gain_v2
+tag_Noise=SiStripNoise_Fake_PeakMode_20X
 
-tag_LA_Ideal=CSA07_SiStrip_Ideal_LAngle_v2
-tag_LA_10invpb=CSA07_SiStrip_10invpb_LAngle_v2
-tag_LA_100invpb=CSA07_SiStrip_100invpb_LAngle_v2
+tag_Gain_Ideal=SiStripGain_Ideal_20X
+tag_Gain_10invpb=SiStripGain_10invpb_20X
+tag_Gain_100invpb=SiStripGain_100invpb_20X
+
+tag_LA_Ideal=SiStripLorentzAngle_Ideal_20X
+tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_20X
+tag_LA_100invpb=SiStripLorentzAngle_100invpb_20X
        
 
 #--------------------------------------------------
@@ -35,10 +38,29 @@ what=$2
 eval `scramv1 runtime -sh`
 
 IsSqlite=0
-if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]; then
+
+
+workdir=`pwd`
+if [ ! -e $CMSSW_BASE/src/CondFormats/SiStripObjects/xml ]; then
+    cd $CMSSW_BASE/src 
+    cvs co CondFormats/SiStripObjects/xml 
+    cd $workdir 
+fi
+
+if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  || [[ `echo ${connectstring} | grep -c oracle` -ne 0  &&  "c$3" == "cforce" ]] ; then
+    
+    echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
+    
     IsSqlite=1
     rm `echo ${connectstring} | sed -e "s@sqlite_file:@@"`
-    cmscond_bootstrap_detector.pl --offline_connect ${connectstring} --auth /afs/cern.ch/cms/DB/conddb/authentication.xml STRIP
+
+    #cmscond_bootstrap_detector.pl --offline_connect ${connectstring} --auth /afs/cern.ch/cms/DB/conddb/authentication.xml STRIP
+    for obj in `ls $CMSSW_BASE/src/CondFormats/SiStripObjects/xml/*xml`
+      do
+      echo -e  "\npool_build_object_relational_mapping -f $obj   -d CondFormatsSiStripObjects -c ${connectstring}\n"
+      pool_build_object_relational_mapping -f $obj   -d CondFormatsSiStripObjects -c ${connectstring} -u $USER -p $PASSWD
+
+    done
 fi
 
 [ ! -e log ] && mkdir log
