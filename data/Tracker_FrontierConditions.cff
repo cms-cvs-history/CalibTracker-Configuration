@@ -1,1 +1,12 @@
-include "CalibTracker/Configuration/data/Tracker_FrontierConditions_IntDB.cff"
+# Tracker alignment
+#
+include "CalibTracker/Configuration/data/TrackerAlignment/TrackerAlignment_Frontier.cff"
+#
+# Pixel calib
+#
+include "CalibTracker/Configuration/data/SiPixel_FrontierConditions.cff"
+#
+# Strip calib
+#
+include "CalibTracker/Configuration/data/SiStrip_FrontierConditions.cff"
+
