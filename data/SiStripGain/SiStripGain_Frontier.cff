@@ -1,0 +1,10 @@
+es_source siStripApvGain = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
+replace siStripApvGain.connect="frontier://FrontierProd/CMS_COND_20X_STRIP"
+replace siStripApvGain.toGet = {{ string record = "SiStripApvGainRcd"
+                                  string tag = "SiStripGain_Ideal_20X" }}
+replace siStripApvGain.BlobStreamerName = "TBufferBlobStreamingService"
+#replace siStripApvGain.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
+#replace siStripApvGain.DBParameters.messageLevel=2
+
+
+include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
