@@ -6,7 +6,7 @@ include "Alignment/CommonAlignmentProducer/data/fakeAlignmentProducer.cfi"
 # Sources that actually put the records into ESetup
 # (Here with unlimited IOV, taken from producer above.)
 # =====================================================
-include "Alignment/CommonAlignmentProducer/data/fakeGlobalPositionSource.cfi"
+include "Alignment/CommonAlignmentProducer/data/GlobalPosition_Fake.cff"
 
 es_source fakeTrackerAlignmentSource = EmptyESSource {
     string recordName = "TrackerAlignmentRcd"
