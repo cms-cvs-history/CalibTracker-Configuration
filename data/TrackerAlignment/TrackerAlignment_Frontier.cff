@@ -1,16 +1,14 @@
 include "Alignment/CommonAlignmentProducer/data/GlobalPosition_Frontier.cff"
 
 es_source trackerAlignment = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace trackerAlignment.connect="frontier://Frontier/CMS_COND_20X_ALIGNMENT"
+replace trackerAlignment.connect="frontier://FrontierProd/CMS_COND_20X_ALIGNMENT"
 # replace trackerAlignment.connect = "oracle://cms_orcoff_int2r/CMS_COND_ALIGNMENT" # oracle dev. DB
 replace trackerAlignment.toGet = {
-    { string record = "TrackerAlignmentRcd"      
-      string tag = "TrackerIdealGeometry200" },
-    { string record = "TrackerAlignmentErrorRcd"
-      string tag = "TrackerIdealGeometryErrors200" }
+        { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry200" },
+        { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors200" }
 }
 
-es_prefer trackerAlignment = PoolDBESSource {}
+es_prefer trackerAlignment = PoolDBESSource {} # FIXME: Should we use that?
 
 include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
 # to apply misalignments

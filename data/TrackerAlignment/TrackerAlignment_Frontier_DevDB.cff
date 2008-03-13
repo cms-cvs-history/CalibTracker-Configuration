@@ -7,7 +7,7 @@ replace trackerAlignment.toGet = {
         { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors200" }
 }
 
-es_prefer trackerAlignment = PoolDBESSource {} # FIXME: should we use that?
+es_prefer trackerAlignment = PoolDBESSource {} # FIXME: Should we use that?
 
 include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
 # to apply misalignments
