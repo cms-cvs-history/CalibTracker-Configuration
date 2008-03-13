@@ -1,6 +1,6 @@
 #
-# Pixel calib
+# Pixel Frontier conditions from Integration DB
 #
-include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Fake.cff"
-include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Fake.cff"
-
+include "CalibTracker/Configuration/data/SiPixelCabling/SiPixelCabling_Frontier_IntDB.cff"
+include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Frontier_IntDB.cff"
+include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Frontier_IntDB.cff"
