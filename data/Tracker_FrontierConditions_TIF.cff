@@ -54,6 +54,7 @@ replace siStripPedestals.toGet = {{ string record = "SiStripPedestalsRcd"
 ## SiStripQuality
 #
 es_source a = PoolDBESSource {
+    string timetype = "runnumber" 
     string appendToDataLabel = "SiStripBadModule_v1"
     VPSet toGet = { { string record = "SiStripBadModuleRcd"  string tag = "SiStripBadModule_TBuffer_VenturiList_v1"} }
     string connect = "frontier://Frontier/CMS_COND_TIF_17X_STRIP"
@@ -64,6 +65,7 @@ es_source a = PoolDBESSource {
 }
 
 es_source b = PoolDBESSource {
+    string timetype = "runnumber" 
     string appendToDataLabel = "SiStripBadFiber_v1"
     VPSet toGet = { { string record = "SiStripBadFiberRcd"   string tag = "SiStripBadFiber_TBuffer_VenturiList_v1"} }
     string connect = "frontier://Frontier/CMS_COND_TIF_17X_STRIP"
