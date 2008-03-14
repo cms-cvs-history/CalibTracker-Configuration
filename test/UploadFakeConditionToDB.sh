@@ -19,10 +19,14 @@ tag_Noise=SiStripNoise_Fake_PeakMode_20X
 tag_Gain_Ideal=SiStripGain_Ideal_20X
 tag_Gain_10invpb=SiStripGain_10invpb_20X
 tag_Gain_100invpb=SiStripGain_100invpb_20X
+tag_Gain_1invpb=SiStripGain_1invpb_20X
+tag_Gain_StartUp=SiStripGain_StartUp_20X
 
 tag_LA_Ideal=SiStripLorentzAngle_Ideal_20X
 tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_20X
 tag_LA_100invpb=SiStripLorentzAngle_100invpb_20X
+tag_LA_1invpb=SiStripLorentzAngle_1invpb_20X
+tag_LA_StartUp=SiStripLorentzAngle_StartUp_20X
        
 
 #--------------------------------------------------
@@ -39,29 +43,15 @@ eval `scramv1 runtime -sh`
 
 IsSqlite=0
 
-
-workdir=`pwd`
-if [ ! -e $CMSSW_BASE/src/CondFormats/SiStripObjects/xml ]; then
-    cd $CMSSW_BASE/src 
-    cvs co CondFormats/SiStripObjects/xml 
-    cd $workdir 
-fi
+[ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  && IsSqlite=1 && rm `echo ${connectstring} | sed -e "s@sqlite_file:@@"`
 
 if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  || [[ `echo ${connectstring} | grep -c oracle` -ne 0  &&  "c$3" == "cforce" ]] ; then
-    
-    echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
-    
-    IsSqlite=1
-    rm `echo ${connectstring} | sed -e "s@sqlite_file:@@"`
 
-    #cmscond_bootstrap_detector.pl --offline_connect ${connectstring} --auth /afs/cern.ch/cms/DB/conddb/authentication.xml STRIP
-    for obj in `ls $CMSSW_BASE/src/CondFormats/SiStripObjects/xml/*xml`
-      do
-      echo -e  "\npool_build_object_relational_mapping -f $obj   -d CondFormatsSiStripObjects -c ${connectstring}\n"
-      pool_build_object_relational_mapping -f $obj   -d CondFormatsSiStripObjects -c ${connectstring} -u $USER -p $PASSWD
-
-    done
+echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
+	cvs co CondTools/SiStrip/test/CreatingTables.sh
+	CondTools/SiStrip/test/CreatingTables.sh $connectstring $USER  $PASSWD
 fi
+
 
 [ ! -e log ] && mkdir log
 [ ! -e cfg ] && mkdir cfg
@@ -73,7 +63,8 @@ for file in `ls templateCFG/*template.cfg | grep -i "$what"`
   do
   echo -e "\n template file $file"
   cfgfile=`basename $file | sed -e "s@_template.cfg@.cfg@"`
-  cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" > cfg/$cfgfile
+  #cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" > cfg/$cfgfile
+  cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g"  -e "s@insert_tag_Gain_1invpb@${tag_Gain_1invpb}@g"  -e "s@insert_tag_Gain_StartUp@${tag_Gain_StartUp}@g"  -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" -e "s@insert_tag_LA_1invpb@${tag_LA_1invpb}@g" -e "s@insert_tag_LA_StartUp@${tag_LA_StartUp}@g"> cfg/$cfgfile
 
   echo -e "\n\n-----------------------\n... processing cmsRun cfg/$cfgfile \n-----------------------\n\n\n"
   cmsRun cfg/$cfgfile
