@@ -32,7 +32,8 @@ include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
 ##LA
 #
 
-include "CalibTracker/Configuration/data/SiStripLorentzAngle/SiStripLorentzAngle_Fake.cff"
+#include "CalibTracker/Configuration/data/SiStripLorentzAngle/SiStripLorentzAngle_Fake.cff"
+include "CalibTracker/Configuration/data/SiStrip_FakeLorentzAngle.cfi"
 
 #
 ##Noise
