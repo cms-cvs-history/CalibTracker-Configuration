@@ -4,8 +4,8 @@
 include "CalibTracker/Configuration/data/SiStripCabling/SiStripCabling_Fake.cff"
 include "CalibTracker/Configuration/data/SiStripGain/SiStripGain_Fake.cff"
 include "CalibTracker/Configuration/data/SiStripLorentzAngle/SiStripLorentzAngle_Fake.cff"
-include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Fake_APVModeDec.cff"
-#include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Fake_APVModePeak.cff"
+#include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Fake_APVModeDec.cff"
+include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Fake_APVModePeak.cff"
 include "CalibTracker/Configuration/data/SiStripPedestals/SiStripPedestals_Fake.cff"
 include "CalibTracker/Configuration/data/SiStripQuality/SiStripQuality_Fake.cff"
 
