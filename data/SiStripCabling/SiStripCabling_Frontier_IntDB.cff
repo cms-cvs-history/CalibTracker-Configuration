@@ -1,7 +1,7 @@
 es_source siStripFedCabling = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
 replace siStripFedCabling.connect="frontier://cms_conditions_data/CMS_COND_20X_STRIP"
 replace siStripFedCabling.toGet = {{ string record = "SiStripFedCablingRcd" 
-                                     string tag = "SiStripFedCabling_20X" }}
+                                     string tag = "SiStripFedCabling_20X_mc" }}
 #replace siStripFedCabling.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
 #replace siStripFedCabling.DBParameters.messageLevel=2
 
