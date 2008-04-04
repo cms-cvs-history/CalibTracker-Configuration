@@ -48,8 +48,8 @@ IsSqlite=0
 if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  || [[ `echo ${connectstring} | grep -c oracle` -ne 0  &&  "c$3" == "cforce" ]] ; then
 
 echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
-	cvs co CondTools/SiStrip/test/CreatingTables.sh
-	CondTools/SiStrip/test/CreatingTables.sh $connectstring $USER  $PASSWD
+	cvs co CondTools/SiStrip/scripts/CreatingTables.sh
+	CondTools/SiStrip/scripts/CreatingTables.sh $connectstring $USER  $PASSWD
 fi
 
 
