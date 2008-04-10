@@ -12,21 +12,21 @@ connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 USER=CMS_COND_STRIP
 PASSWD=SSWDC3MCAI8HQHTC
 
-tag_cabling=SiStripFedCabling_20X_mc
+tag_cabling=SiStripFedCabling_20X
 
-tag_Noise=SiStripNoise_Fake_PeakMode_20X_mc
+tag_Noise=SiStripNoise_Fake_PeakMode_20X
 
 tag_Gain_Ideal=SiStripGain_Ideal_20X
-tag_Gain_10invpb=SiStripGain_10invpb_20X_mc
-tag_Gain_100invpb=SiStripGain_100invpb_20X_mc
-tag_Gain_1invpb=SiStripGain_1invpb_20X_mc
-tag_Gain_StartUp=SiStripGain_StartUp_20X_mc
+tag_Gain_10invpb=SiStripGain_10invpb_20X
+tag_Gain_100invpb=SiStripGain_100invpb_20X
+tag_Gain_1invpb=SiStripGain_1invpb_20X
+tag_Gain_StartUp=SiStripGain_StartUp_20X
 
 tag_LA_Ideal=SiStripLorentzAngle_Ideal_20X
 tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_20X
-tag_LA_100invpb=SiStripLorentzAngle_100invpb_20X_mc
-tag_LA_1invpb=SiStripLorentzAngle_1invpb_20X_mc
-tag_LA_StartUp=SiStripLorentzAngle_StartUp_20X_mc
+tag_LA_100invpb=SiStripLorentzAngle_100invpb_20X
+tag_LA_1invpb=SiStripLorentzAngle_1invpb_20X
+tag_LA_StartUp=SiStripLorentzAngle_StartUp_20X
        
 
 #--------------------------------------------------

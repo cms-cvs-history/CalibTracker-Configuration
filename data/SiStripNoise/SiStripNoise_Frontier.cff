@@ -1,7 +1,7 @@
 es_source siStripNoise = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
 replace siStripNoise.connect="frontier://FrontierProd/CMS_COND_20X_STRIP"
 replace siStripNoise.toGet = {{ string record = "SiStripNoisesRcd" 
-                                       string tag = "SiStripNoise_Fake_PeakMode_20X_mc" }}
+                                       string tag = "SiStripNoise_Fake_PeakMode_20X" }}
 replace siStripNoise.BlobStreamerName = "TBufferBlobStreamingService"
 #replace siStripNoise.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
 #replace siStripNoise.DBParameters.messageLevel=2
