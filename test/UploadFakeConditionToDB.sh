@@ -49,9 +49,8 @@ if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  || [[ `echo ${connectstri
 
 echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
 	cvs co CondTools/SiStrip/scripts/CreatingTables.sh
-	CondTools/SiStrip/scripts/CreatingTables.sh $connectstring $USER  $PASSWD
+	./CondTools/SiStrip/scripts/CreatingTables.sh $connectstring $USER  $PASSWD
 fi
-
 
 [ ! -e log ] && mkdir log
 [ ! -e cfg ] && mkdir cfg
