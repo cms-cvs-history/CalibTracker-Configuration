@@ -1,9 +1,0 @@
-#
-# Strip calib
-#
-include "CalibTracker/Configuration/data/SiStripCabling/SiStripCabling_Frontier.cff"
-include "CalibTracker/Configuration/data/SiStripGain/SiStripGain_Frontier.cff"
-include "CalibTracker/Configuration/data/SiStripLorentzAngle/SiStripLorentzAngle_Frontier.cff"
-include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Frontier.cff"
-include "CalibTracker/Configuration/data/SiStripPedestals/SiStripPedestals_Fake.cff"
-include "CalibTracker/Configuration/data/SiStripQuality/SiStripQuality_Fake.cff"

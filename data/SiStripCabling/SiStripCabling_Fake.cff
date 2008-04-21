@@ -1,3 +1,0 @@
-include "CalibTracker/SiStripESProducers/data/SiStripFedCablingFakeESSource.cfi"
-
-es_module sistripconn = SiStripConnectivity {}

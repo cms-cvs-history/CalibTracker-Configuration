@@ -1,7 +1,0 @@
-#
-# Pixel Fake Conditions
-#
-include "CalibTracker/Configuration/data/SiPixelGain/SiPixelGain_Fake.cff"
-include "CalibTracker/Configuration/data/SiPixelLorentzAngle/SiPixelLorentzAngle_Fake.cff"
-#
-include "CalibTracker/Configuration/data/SiPixelCabling/SiPixelCabling_SQLite.cff"

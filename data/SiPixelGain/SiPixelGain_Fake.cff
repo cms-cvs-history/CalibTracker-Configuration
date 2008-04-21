@@ -1,5 +1,0 @@
-#
-# ESource for fake gain calibration
-#
-include "CalibTracker/SiPixelESProducers/data/SiPixelFakeGainOfflineESSource.cfi"
-
