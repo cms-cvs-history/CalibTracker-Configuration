@@ -12,21 +12,23 @@ connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 USER=CMS_COND_STRIP
 PASSWD=SSWDC3MCAI8HQHTC
 
-tag_cabling=SiStripFedCabling_20X
+tag_cabling=SiStripFedCabling_21X
 
-tag_Noise=SiStripNoise_Fake_PeakMode_20X
+tag_Noise=SiStripNoise_Fake_PeakMode_21X
 
-tag_Gain_Ideal=SiStripGain_Ideal_20X
-tag_Gain_10invpb=SiStripGain_10invpb_20X
-tag_Gain_100invpb=SiStripGain_100invpb_20X
-tag_Gain_1invpb=SiStripGain_1invpb_20X
-tag_Gain_StartUp=SiStripGain_StartUp_20X
+tag_Threshold=SiStripThreshold_Fake_21X
 
-tag_LA_Ideal=SiStripLorentzAngle_Ideal_20X
-tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_20X
-tag_LA_100invpb=SiStripLorentzAngle_100invpb_20X
-tag_LA_1invpb=SiStripLorentzAngle_1invpb_20X
-tag_LA_StartUp=SiStripLorentzAngle_StartUp_20X
+tag_Gain_Ideal=SiStripGain_Ideal_21X
+tag_Gain_10invpb=SiStripGain_10invpb_21X
+tag_Gain_100invpb=SiStripGain_100invpb_21X
+tag_Gain_1invpb=SiStripGain_1invpb_21X
+tag_Gain_StartUp=SiStripGain_StartUp_21X
+
+tag_LA_Ideal=SiStripLorentzAngle_Ideal_21X
+tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_21X
+tag_LA_100invpb=SiStripLorentzAngle_100invpb_21X
+tag_LA_1invpb=SiStripLorentzAngle_1invpb_21X
+tag_LA_StartUp=SiStripLorentzAngle_StartUp_21X
        
 
 #--------------------------------------------------
@@ -47,9 +49,11 @@ IsSqlite=0
 
 if [ `echo ${connectstring} | grep -c sqlite` -ne 0 ]  || [[ `echo ${connectstring} | grep -c oracle` -ne 0  &&  "c$3" == "cforce" ]] ; then
 
-echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
-	cvs co CondTools/SiStrip/scripts/CreatingTables.sh
-	./CondTools/SiStrip/scripts/CreatingTables.sh $connectstring $USER  $PASSWD
+    echo -e "\n-----------\nCreating tables for db ${connectstring} \n-----------\n"
+    cd $CMSSW_BASE/src
+    cvs co CondTools/SiStrip/scripts/CreatingTables.sh
+    cd -
+    $CMSSW_BASE/src/CondTools/SiStrip/scripts/CreatingTables.sh $connectstring $USER  $PASSWD
 fi
 
 [ ! -e log ] && mkdir log
@@ -63,7 +67,7 @@ for file in `ls templateCFG/*template.cfg | grep -i "$what"`
   echo -e "\n template file $file"
   cfgfile=`basename $file | sed -e "s@_template.cfg@.cfg@"`
   #cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" > cfg/$cfgfile
-  cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g"  -e "s@insert_tag_Gain_1invpb@${tag_Gain_1invpb}@g"  -e "s@insert_tag_Gain_StartUp@${tag_Gain_StartUp}@g"  -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" -e "s@insert_tag_LA_1invpb@${tag_LA_1invpb}@g" -e "s@insert_tag_LA_StartUp@${tag_LA_StartUp}@g"> cfg/$cfgfile
+  cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g"  -e "s@insert_tag_Gain_1invpb@${tag_Gain_1invpb}@g"  -e "s@insert_tag_Gain_StartUp@${tag_Gain_StartUp}@g"  -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g"  -e "s@insert_tag_Threshold@${tag_Threshold}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" -e "s@insert_tag_LA_1invpb@${tag_LA_1invpb}@g" -e "s@insert_tag_LA_StartUp@${tag_LA_StartUp}@g"> cfg/$cfgfile
 
   echo -e "\n\n-----------------------\n... processing cmsRun cfg/$cfgfile \n-----------------------\n\n\n"
   cmsRun cfg/$cfgfile
