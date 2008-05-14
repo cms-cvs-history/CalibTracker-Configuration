@@ -8,4 +8,5 @@ include "CalibTracker/Configuration/data/SiStripLorentzAngle/SiStripLorentzAngle
 include "CalibTracker/Configuration/data/SiStripNoise/SiStripNoise_Fake_APVModePeak.cff"
 include "CalibTracker/Configuration/data/SiStripPedestals/SiStripPedestals_Fake.cff"
 include "CalibTracker/Configuration/data/SiStripQuality/SiStripQuality_Fake.cff"
+include "CalibTracker/Configuration/data/SiStripThreshold/SiStripThreshold_Fake.cff"
 
