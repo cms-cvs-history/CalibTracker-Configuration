@@ -19,16 +19,16 @@ tag_Noise=SiStripNoise_Fake_PeakMode_21X
 tag_Threshold=SiStripThreshold_Fake_21X
 
 tag_Gain_Ideal=SiStripGain_Ideal_21X
-tag_Gain_10invpb=SiStripGain_10invpb_21X
-tag_Gain_100invpb=SiStripGain_100invpb_21X
-tag_Gain_1invpb=SiStripGain_1invpb_21X
-tag_Gain_StartUp=SiStripGain_StartUp_21X
+tag_Gain_10invpb=SiStripGain_10invpb_21X_mc
+tag_Gain_100invpb=SiStripGain_100invpb_21X_mc
+tag_Gain_1invpb=SiStripGain_1invpb_21X_mc
+tag_Gain_StartUp=SiStripGain_StartUp_21X_mc
 
 tag_LA_Ideal=SiStripLorentzAngle_Ideal_21X
-tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_21X
-tag_LA_100invpb=SiStripLorentzAngle_100invpb_21X
-tag_LA_1invpb=SiStripLorentzAngle_1invpb_21X
-tag_LA_StartUp=SiStripLorentzAngle_StartUp_21X
+tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_21X_mc
+tag_LA_100invpb=SiStripLorentzAngle_100invpb_21X_mc
+tag_LA_1invpb=SiStripLorentzAngle_1invpb_21X_mc
+tag_LA_StartUp=SiStripLorentzAngle_StartUp_21X_mc
        
 
 #--------------------------------------------------

@@ -1,9 +1,9 @@
 include "CalibTracker/Configuration/data/SiStrip_FrontierPedestals.cfi"
 
 es_source siStripPedestals = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siStripPedestals.connect="frontier://FrontierDev/CMS_COND_18X_STRIP"
+replace siStripPedestals.connect="frontier://FrontierDev/CMS_COND_STRIP"
 replace siStripPedestals.toGet = {{ string record = "SiStripPedestalsRcd" 
-                                       string tag = "SiStripPedestals_Fake_20X" }}
+                                       string tag = "SiStripPedestals_Fake_21X" }}
 replace siStripPedestals.BlobStreamerName = "TBufferBlobStreamingService"
 #replace siStripPedestals.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
 #replace siStripPedestals.DBParameters.messageLevel=2
