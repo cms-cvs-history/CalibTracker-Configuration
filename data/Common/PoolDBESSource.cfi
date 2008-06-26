@@ -1,7 +1,7 @@
 include "CondCore/DBCommon/data/CondDBCommon.cfi"
 
 es_source poolDBESSource = PoolDBESSource { 
-
+    string appendToDataLabel = ""
     untracked string BlobStreamerName = "TBufferBlobStreamingService"
     VPSet toGet = {{ 
 	    string record = "SiStripNoisesRcd" 
