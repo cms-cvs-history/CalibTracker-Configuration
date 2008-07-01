@@ -1,0 +1,14 @@
+
+#
+# Fake
+#
+include "CalibTracker/SiStripESProducers/data/SiStripPedestalsFakeSource.cfi"
+include "CalibTracker/SiStripESProducers/data/SiStripQualityFakeESSource.cfi"
+include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
+replace TrackerDigiGeometryESModule.applyAlignment = true
+
+include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
+es_module sistripconn = SiStripConnectivity {}
+include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
+include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
+
