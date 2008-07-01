@@ -1,0 +1,22 @@
+
+#
+# Fake for condition data that are not in DB
+#
+include "CalibTracker/SiStripESProducers/data/SiStripPedestalsFakeSource.cfi"
+include "CalibTracker/SiStripESProducers/data/SiStripQualityFakeESSource.cfi"
+
+#
+# Dependent Records
+#
+
+include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
+replace TrackerDigiGeometryESModule.applyAlignment = true
+
+#Gain
+include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
+#cabling
+es_module sistripconn = SiStripConnectivity {}
+#Lorentz Angle
+include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
+include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
+
