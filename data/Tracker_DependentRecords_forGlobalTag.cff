@@ -17,6 +17,9 @@ include "CalibTracker/SiStripESProducers/data/SiStripGainESProducer.cfi"
 #cabling
 es_module sistripconn = SiStripConnectivity {}
 #Lorentz Angle
+es_source siStripLAFakeESSourceforSimulation = siStripLAFakeESSource from "CalibTracker/SiStripESProducers/data/SiStripLAFakeESSource.cfi"
+replace siStripLAFakeESSourceforSimulation.appendToDataLabel= "fake"
+
 include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
 include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
 
