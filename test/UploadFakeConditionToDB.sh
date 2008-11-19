@@ -12,7 +12,7 @@ connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 USER=CMS_COND_STRIP
 PASSWD=SSWDC3MCAI8HQHTC
 
-tag_cabling=SiStripFedCabling_30X
+tag_cabling=SiStripFedCabling_Fake_30X
 
 tag_Noise=SiStripNoise_Fake_PeakMode_30X
 
