@@ -12,23 +12,23 @@ connectstringB="oracle://cms_orcoff_int2r/CMS_COND_STRIP"
 USER=CMS_COND_STRIP
 PASSWD=SSWDC3MCAI8HQHTC
 
-tag_cabling=SiStripFedCabling_21X
+tag_cabling=SiStripFedCabling_30X
 
-tag_Noise=SiStripNoise_Fake_PeakMode_21X
+tag_Noise=SiStripNoise_Fake_PeakMode_30X
 
-tag_Threshold=SiStripThreshold_Fake_21X
+tag_Threshold=SiStripThreshold_Fake_30X
 
-tag_Gain_Ideal=SiStripGain_Ideal_21X
-tag_Gain_10invpb=SiStripGain_10invpb_21X_mc
-tag_Gain_100invpb=SiStripGain_100invpb_21X_mc
-tag_Gain_1invpb=SiStripGain_1invpb_21X_mc
-tag_Gain_StartUp=SiStripGain_StartUp_21X_mc
+tag_Gain_Ideal=SiStripGain_Ideal_30X
+tag_Gain_10invpb=SiStripGain_10invpb_30X_mc
+tag_Gain_100invpb=SiStripGain_100invpb_30X_mc
+tag_Gain_1invpb=SiStripGain_1invpb_30X_mc
+tag_Gain_StartUp=SiStripGain_StartUp_30X_mc
 
-tag_LA_Ideal=SiStripLorentzAngle_Ideal_21X
-tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_21X_mc
-tag_LA_100invpb=SiStripLorentzAngle_100invpb_21X_mc
-tag_LA_1invpb=SiStripLorentzAngle_1invpb_21X_mc
-tag_LA_StartUp=SiStripLorentzAngle_StartUp_21X_mc
+tag_LA_Ideal=SiStripLorentzAngle_Ideal_30X
+tag_LA_10invpb=SiStripLorentzAngle_10invpb_LAngle_30X_mc
+tag_LA_100invpb=SiStripLorentzAngle_100invpb_30X_mc
+tag_LA_1invpb=SiStripLorentzAngle_1invpb_30X_mc
+tag_LA_StartUp=SiStripLorentzAngle_StartUp_30X_mc
        
 
 #--------------------------------------------------
@@ -62,10 +62,10 @@ fi
 
 # sed -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g"              
 
-for file in `ls templateCFG/*template.cfg | grep -i "$what"`
+for file in `ls templatePy/*template_cfg.py | grep -i "$what"`
   do
   echo -e "\n template file $file"
-  cfgfile=`basename $file | sed -e "s@_template.cfg@.cfg@"`
+  cfgfile=`basename $file | sed -e "s@_template@@"`
   #cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g" -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" > cfg/$cfgfile
   cat $file | sed -e "s@insert_connectstring@${connectstring}@"  -e "s@insert_tag_cabling@${tag_cabling}@g" -e "s@insert_tag_Gain_100invpb@${tag_Gain_100invpb}@g"  -e "s@insert_tag_Gain_1invpb@${tag_Gain_1invpb}@g"  -e "s@insert_tag_Gain_StartUp@${tag_Gain_StartUp}@g"  -e "s@insert_tag_Gain_10invpb@${tag_Gain_10invpb}@g" -e "s@insert_tag_Gain_Ideal@${tag_Gain_Ideal}@g" -e "s@insert_tag_Noise@${tag_Noise}@g"  -e "s@insert_tag_Threshold@${tag_Threshold}@g" -e "s@insert_tag_LA_100invpb@${tag_LA_100invpb}@g" -e "s@insert_tag_LA_10invpb@${tag_LA_10invpb}@g" -e "s@insert_tag_LA_Ideal@${tag_LA_Ideal}@g" -e "s@insert_tag_LA_1invpb@${tag_LA_1invpb}@g" -e "s@insert_tag_LA_StartUp@${tag_LA_StartUp}@g"> cfg/$cfgfile
 
