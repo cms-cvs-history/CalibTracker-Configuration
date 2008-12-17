@@ -1,3 +1,0 @@
-# Dummy es_source (creating empty Alignments and AlignmentErrors)
-# ===============================================================
-include "Alignment/CommonAlignmentProducer/data/FakeAlignmentSource.cfi"

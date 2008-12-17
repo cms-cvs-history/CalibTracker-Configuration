@@ -1,4 +1,0 @@
-es_source siPixelLorentzAngle = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siPixelLorentzAngle.connect="frontier://FrontierDev/CMS_COND_PIXEL"
-replace siPixelLorentzAngle.toGet= {{ string record = "SiPixelLorentzAngleRcd" 
-                                         string tag = "trivial_LorentzAngle_mc" }}

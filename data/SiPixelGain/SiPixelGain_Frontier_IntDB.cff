@@ -1,7 +1,0 @@
-es_source siPixelGainCalibration = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace siPixelGainCalibration.connect="frontier://cms_conditions_data/CMS_COND_20X_PIXEL"
-replace siPixelGainCalibration.toGet= {{ string record = "SiPixelGainCalibrationOfflineRcd" 
-                                         string tag = "V2_trivial_TBuffer_mc" }}
-replace siPixelGainCalibration.BlobStreamerName = "TBufferBlobStreamingService"
-#replace siPixelGainCalibration.DBParameters.authenticationPath="/afs/cern.ch/cms/DB/conddb"
-#replace siPixelGainCalibration.DBParameters.messageLevel=2

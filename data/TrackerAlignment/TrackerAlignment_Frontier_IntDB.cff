@@ -1,9 +1,0 @@
-include "Alignment/CommonAlignmentProducer/data/GlobalPosition_Frontier_IntDB.cff"
-
-es_source trackerAlignment = poolDBESSource from "CalibTracker/Configuration/data/Common/PoolDBESSource.cfi"
-replace trackerAlignment.connect="frontier://FrontierInt/CMS_COND_21X_ALIGNMENT"
-replace trackerAlignment.toGet = {
-        { string record = "TrackerAlignmentRcd"      string tag = "TrackerIdealGeometry210_mc" },
-        { string record = "TrackerAlignmentErrorRcd" string tag = "TrackerIdealGeometryErrors210_mc" }
-}
-
