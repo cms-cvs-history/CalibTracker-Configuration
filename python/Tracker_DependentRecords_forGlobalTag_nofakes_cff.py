@@ -4,6 +4,12 @@ import FWCore.ParameterSet.Config as cms
 # first SiStripGainESProducer takes SiStripGainRcd from DB
 from CalibTracker.SiStripESProducers.SiStripGainESProducer_cfi import *
 
+# SiStripLorentzAngleDep producer to select the LA value according to Tracker mode
+from CalibTracker.SiStripESProducers.SiStripLorentzAngleDepESProducer_cfi import *
+
+# SiStripBackPlaneCorrectionDep producer to select the LA value according to Tracker mode
+from CalibTracker.SiStripESProducers.SiStripBackPlaneCorrectionDepESProducer_cfi import *
+
 #LorentzAngle
 from RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTrackAngle_cfi import *
 from RecoLocalTracker.SiStripRecHitConverter.SiStripRecHitMatcher_cfi import *
@@ -18,7 +24,8 @@ siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
      cms.PSet( record = cms.string("RunInfoRcd"),           tag    = cms.string("") ),
      cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
      cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
-     cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") )
+     cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") ),
+     cms.PSet( record = cms.string("SiStripBadStripRcd"),   tag    = cms.string("") )
      )
 siStripQualityESProducer.ReduceGranularity = cms.bool(False)
 # True means all the debug output from adding the RunInfo (default is False)
@@ -29,3 +36,12 @@ siStripQualityESProducer.PrintDebugOutput = cms.bool(False)
 # Default is "False".
 siStripQualityESProducer.UseEmptyRunInfo = cms.bool(False)
 
+from CalibTracker.SiPixelESProducers.SiPixelQualityESProducer_cfi import *
+siPixelQualityESProducer.ListOfRecordToMerge = cms.VPSet(
+        cms.PSet( record = cms.string("SiPixelQualityFromDbRcd"),
+                  tag    = cms.string("")
+                  ),
+        cms.PSet( record = cms.string("SiPixelDetVOffRcd"),
+                  tag    = cms.string("")
+                  )
+        )
